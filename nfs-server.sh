@@ -4,5 +4,5 @@ mkdir /shared
 chmod 777 /shared
 echo "/shared 172.16.*(rw,sync)" > /etc/exports
 systemctl start nfs-server
-ec2metadata -o | cut -d ' ' -f 2 >> /shared/list.txt
+ec2-metadata -o | cut -d ' ' -f 2 >> /shared/list.txt
 chmod 777 /shared/list.txt
